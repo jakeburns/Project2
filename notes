@@ -1,0 +1,23 @@
+WDD 2019
+D3  Project
+Assigned March 14th - Due April 4th
+
+
+It is time to create a d3 app to visualize a complex set of data.  Your instructor has provided you with a 
+set of grades from a previous class.  You will create a web application that will illuminate what is happening 
+within the course and show data in multiple different ways.  In particular I would like to easily see if there 
+is a change in student performance during the semester.
+
+The Syllabus for that class indicates that 
+Quizzes are worth 15% of the grade
+Homeworks are worth 15% of the grade
+There are 2 tests, each worth 20% of the grade
+The final is worth 30% of the grade
+
+You should use d3, but unless you get explicit permission you may not use any other libraries.
+
+
+one chart
+shows change in data throughout semester
+hover/click freature to show individual students
+line chart
