@@ -110,12 +110,13 @@ var drawChart = function(data)
                     svg.append("path")
                        .datum(penguinInfo)
                        .attr("class", "line")
-                       .attr("class", penguinName)
+                       .attr("class","penguin" + i)
                        //.attr("class", "liners")
                        .attr("d", line)
                        .attr("fill", "none")
                        .attr("stroke", color)
-                       .attr("stroke-width", "3");
+                       .attr("stroke-width", "3")
+                       .classed("hidden",true);
                        console.log(penguinName)
 
                        //.classed("hidden", true)
@@ -123,6 +124,7 @@ var drawChart = function(data)
 
 
               data.forEach(function(d, i){
+                var num = i
                 var body = d3.select("body")
                 var penguinPic = "penguinPics/" + d.picture;
                 var buttons = body.append("button")
@@ -131,17 +133,27 @@ var drawChart = function(data)
                         .attr("align", "left")
                         .append("img")
                         .attr("src",penguinPic)
+                        .attr("onmouseover",function(d, num){
+                          var newPeng = "." +"penguin" + i
+                          d3.select(newPeng).attr("stroke-width","15");
+                        })
+                        .attr("onmouseout",function(d, num){
+                          var newPeng = "." +"penguin" + i
+                          d3.select(newPeng).attr("stroke-width","3");
+                        })
                         //.attr("class", penguinPic)
                         .attr("height", "75")
                         .attr("width", "75")
-                        .on("click", function(d, i){
+                        .on("click", function(d, num){
                           console.log(penguinPic+ " was clicked")
                         //  var penguinBegin =d.picture.replace("-300px.png","");
                         //  var penguinName = "." + penguinBegin
                         penguinPic = penguinPic.replace("penguinPics/", "")
-                          var clicked = d3.selectAll("." + penguinPic)
-                                            .attr("opacity", ".2")
-                          console.log(clicked, " selected")
+                        var newPeng = "." +"penguin" + i
+                        d3.select(newPeng).classed("hidden",false);
+                          // var clicked = d3.select("." + penguinPic)
+                          //                   .attr("opacity", ".2")
+                          // console.log(clicked, " selected")
 
 
                         })

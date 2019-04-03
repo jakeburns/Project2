@@ -15,3 +15,7 @@
 svg{
   display: block;
 }
+
+button:hover{
+  border: 100px;
+}
