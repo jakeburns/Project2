@@ -1,0 +1,17 @@
+.hidden{
+  opacity: 0;
+}
+
+/* .valentine-penguin.png{
+  opacity: .2 ;
+} */
+
+.title{
+  border: 5px solid blue;
+  border-radius: 2px;
+  background-color: rgb(150,0,100);
+}
+
+svg{
+  display: block;
+}
