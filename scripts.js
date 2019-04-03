@@ -139,8 +139,8 @@ var drawChart = function(data)
                         //  var penguinBegin =d.picture.replace("-300px.png","");
                         //  var penguinName = "." + penguinBegin
                         penguinPic = penguinPic.replace("penguinPics/", "")
-                          var clicked = d3.select(penguinPic)
-                                            .attr("stroke-width", "100")
+                          var clicked = d3.selectAll("." + penguinPic)
+                                            .attr("opacity", ".2")
                           console.log(clicked, " selected")
 
 
