@@ -137,6 +137,7 @@ var drawChart = function(data)
                         .attr("height", "75")
                         .attr("width", "75")
                         .on("click", function(d, num){
+                          d3.selectAll("path").classed("hidden", true)
                           console.log(penguinPic+ " was clicked")
                         //  var penguinBegin =d.picture.replace("-300px.png","");
                         //  var penguinName = "." + penguinBegin
