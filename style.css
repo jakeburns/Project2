@@ -16,6 +16,6 @@ svg{
   display: block;
 }
 
-button:hover{
-  border: 100px;
+path:hover{
+  stroke-width: 18px;
 }

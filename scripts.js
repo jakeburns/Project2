@@ -15,7 +15,7 @@ var drawChart = function(data)
 
 
 
-     var color = d3.scaleOrdinal(d3.schemeSet1)
+     var color = d3.scaleOrdinal(d3.schemeCategory10)
 
  var svg = d3.select("svg")
                   .attr("height",screen.height)
@@ -115,7 +115,7 @@ var drawChart = function(data)
                        .attr("d", line)
                        .attr("fill", "none")
                        .attr("stroke", color)
-                       .attr("stroke-width", "3")
+                       .attr("stroke-width", "8")
                        .classed("hidden",true);
                        console.log(penguinName)
 
@@ -133,14 +133,6 @@ var drawChart = function(data)
                         .attr("align", "left")
                         .append("img")
                         .attr("src",penguinPic)
-                        .attr("onmouseover",function(d, num){
-                          var newPeng = "." +"penguin" + i
-                          d3.select(newPeng).attr("stroke-width","15");
-                        })
-                        .attr("onmouseout",function(d, num){
-                          var newPeng = "." +"penguin" + i
-                          d3.select(newPeng).attr("stroke-width","3");
-                        })
                         //.attr("class", penguinPic)
                         .attr("height", "75")
                         .attr("width", "75")
@@ -151,6 +143,7 @@ var drawChart = function(data)
                         penguinPic = penguinPic.replace("penguinPics/", "")
                         var newPeng = "." +"penguin" + i
                         d3.select(newPeng).classed("hidden",false);
+
                           // var clicked = d3.select("." + penguinPic)
                           //                   .attr("opacity", ".2")
                           // console.log(clicked, " selected")
